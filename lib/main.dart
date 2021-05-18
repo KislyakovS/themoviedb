@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF042541)),
+        appBarTheme:
+            const AppBarTheme(color: Color(0xFF042541), centerTitle: true),
         primarySwatch: Colors.blue,
       ),
       initialRoute: AuthScreen.routeName,

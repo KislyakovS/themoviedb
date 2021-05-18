@@ -10,7 +10,6 @@ class AuthScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login to your account'),
-        centerTitle: true,
       ),
       body: Body(),
     );
