@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themoviedb/screens/home/home_screen.dart';
+import 'package:themoviedb/screens/bottom_navigation/bottom_navigation_screen.dart';
 
 class Forma extends StatefulWidget {
   @override
@@ -16,7 +16,8 @@ class _FormaState extends State<Forma> {
     final password = _passwordController.text;
 
     if (login.isNotEmpty && password.isNotEmpty) {
-      Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+      Navigator.of(context)
+          .pushReplacementNamed(BottomNavigationScreen.routeName);
     } else {
       setState(() {
         messageError = 'Wrong login or password';
