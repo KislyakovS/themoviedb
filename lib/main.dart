@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/routes.dart';
 import 'package:themoviedb/screens/auth/auth_screen.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(color: Color(0xFF042541)),
         primarySwatch: Colors.blue,
       ),
-      home: AuthScreen(),
+      initialRoute: AuthScreen.routeName,
+      routes: routes,
     );
   }
 }
