@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/models/Movie.dart';
 
+import 'header.dart';
+
 class Body extends StatelessWidget {
   final Movie movie;
 
@@ -9,13 +11,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [
-        Container(
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-          child: Image.asset(movie.imageName),
-        )
-      ],
+      children: [Header(poster: movie.imageName)],
     );
   }
 }
