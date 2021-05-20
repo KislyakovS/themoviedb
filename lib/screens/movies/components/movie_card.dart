@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'body.dart';
+
 class MovieCard extends StatelessWidget {
   const MovieCard({
     Key? key,
     required this.press,
+    required this.movie,
   }) : super(key: key);
 
+  final Movie movie;
   final GestureTapCallback press;
 
   @override
@@ -30,7 +34,7 @@ class MovieCard extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Image.asset('assets/images/Invincible.jpg'),
+                Image.asset(movie.imageName),
                 const SizedBox(width: 15),
                 Expanded(
                   child: Column(
@@ -38,7 +42,7 @@ class MovieCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Invincible',
+                        movie.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -48,14 +52,14 @@ class MovieCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        'March 26, 2021',
+                        movie.time,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(color: Colors.grey),
+                        style: const TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        'Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father’s tutelage.',
+                        movie.description,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                       )

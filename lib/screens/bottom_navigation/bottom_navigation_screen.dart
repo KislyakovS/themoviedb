@@ -23,11 +23,12 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex],
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _screens,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        // showSelectedLabels: false,
-        // showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         iconSize: 30,
         items: const [
