@@ -60,6 +60,7 @@ class _FormaState extends State<Forma> {
         ),
         TextField(
           controller: _loginController,
+          textInputAction: TextInputAction.next,
           decoration: textFieldDecoration,
         ),
         const SizedBox(height: 16),

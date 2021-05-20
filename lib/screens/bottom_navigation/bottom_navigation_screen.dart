@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/screens/home/home_screen.dart';
+import 'package:themoviedb/screens/movies/movies_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   static String routeName = '/bottom_navigation';
@@ -9,7 +10,7 @@ class BottomNavigationScreen extends StatefulWidget {
 }
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
-  List<Widget> _screens = [HomeScreen()];
+  final List<Widget> _screens = [HomeScreen(), MoviesScreen()];
 
   int _selectedIndex = 0;
 
@@ -25,15 +26,15 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        // showSelectedLabels: false,
+        // showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         iconSize: 30,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.movie), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.tv), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: '')
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.movie), label: 'Movie'),
+          BottomNavigationBarItem(icon: Icon(Icons.tv), label: 'TV-Show'),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'People')
         ],
         onTap: _onSelectTap,
       ),
