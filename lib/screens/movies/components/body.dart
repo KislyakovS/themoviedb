@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/screens/movie_details/movie_details_screen.dart';
 import 'package:themoviedb/screens/movies/components/movie_card.dart';
 
 class Movie {
@@ -72,6 +73,14 @@ class _BodyState extends State<Body> {
     _searchController.addListener(_searchMovies);
   }
 
+  void _onMovieTap(int index) {
+    Navigator.pushNamed(
+      context,
+      MovieDetailsScreen.routeName,
+      arguments: MovieDetailsArguments(movie: _filterMovies[index]),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -84,7 +93,7 @@ class _BodyState extends State<Body> {
           itemBuilder: (BuildContext context, int index) {
             return MovieCard(
               movie: _filterMovies[index],
-              press: () {},
+              press: () => _onMovieTap(index),
             );
           },
         ),
