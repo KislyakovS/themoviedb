@@ -11,11 +11,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: Color(0xFF),
-      child: ListView(
-        children: [Header(poster: movie.imageName), Info(movie: movie)],
-      ),
+    return ListView(
+      children: [Header(poster: movie.imageName), Info(movie: movie)],
     );
   }
 }
