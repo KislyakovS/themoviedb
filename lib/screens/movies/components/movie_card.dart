@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/models/Movie.dart';
 
 import 'body.dart';
 

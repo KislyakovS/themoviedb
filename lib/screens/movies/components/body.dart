@@ -1,44 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/models/Movie.dart';
 import 'package:themoviedb/screens/movie_details/movie_details_screen.dart';
 import 'package:themoviedb/screens/movies/components/movie_card.dart';
-
-class Movie {
-  final String imageName;
-  final String title;
-  final String time;
-  final String description;
-
-  Movie({
-    required this.imageName,
-    required this.title,
-    required this.time,
-    required this.description,
-  });
-}
-
-final _demoMovies = [
-  Movie(
-    imageName: 'assets/images/Invincible.jpg',
-    title: 'Invincible',
-    time: 'March 26, 2021',
-    description:
-        'Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father’s tutelage.',
-  ),
-  Movie(
-    imageName: 'assets/images/Invincible.jpg',
-    title: 'The Falcon and the Winter Soldier',
-    time: 'March 26, 2021',
-    description:
-        'Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father’s tutelage.',
-  ),
-  Movie(
-    imageName: 'assets/images/Invincible.jpg',
-    title: 'The Flash',
-    time: 'March 26, 2021',
-    description:
-        'Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father’s tutelage.',
-  )
-];
 
 class Body extends StatefulWidget {
   @override
@@ -48,20 +11,20 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final _searchController = TextEditingController();
 
-  List<Movie> _filterMovies = _demoMovies;
+  List<Movie> _filterMovies = demoMovies;
 
   void _searchMovies() {
     final search = _searchController.text.toLowerCase();
 
     if (search.isNotEmpty) {
       setState(() {
-        _filterMovies = _demoMovies
+        _filterMovies = demoMovies
             .where((Movie movie) => movie.title.toLowerCase().contains(search))
             .toList();
       });
     } else {
       setState(() {
-        _filterMovies = _demoMovies;
+        _filterMovies = demoMovies;
       });
     }
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:themoviedb/screens/movies/components/body.dart';
+import 'package:themoviedb/models/Movie.dart';
+import 'components/body.dart';
 
 class MovieDetailsScreen extends StatelessWidget {
   static String routeName = '/movie_details';
@@ -12,6 +13,7 @@ class MovieDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(arguments.movie.title),
       ),
+      body: Body(movie: arguments.movie),
     );
   }
 }
