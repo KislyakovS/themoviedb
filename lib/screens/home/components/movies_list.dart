@@ -5,7 +5,7 @@ import 'movie_card.dart';
 import 'title_box.dart';
 
 class PopularList extends StatelessWidget {
-  final String title;
+  final Text title;
   final List<Movie> movies;
 
   const PopularList({Key? key, required this.title, required this.movies})
