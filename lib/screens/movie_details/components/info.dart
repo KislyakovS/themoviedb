@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themoviedb/components/radial_percent.dart';
+import 'package:radial_percent/radial_percent.dart';
 import 'package:themoviedb/models/Movie.dart';
 
 class Info extends StatelessWidget {
