@@ -13,6 +13,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: const EdgeInsets.only(bottom: 35),
       children: [
         Header(poster: movie.imageName),
         Info(movie: movie),
