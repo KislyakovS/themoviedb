@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/models/Movie.dart';
+import 'package:themoviedb/screens/movie_details/components/actors.dart';
 import 'package:themoviedb/screens/movie_details/components/info.dart';
 
 import 'header.dart';
@@ -12,7 +13,12 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [Header(poster: movie.imageName), Info(movie: movie)],
+      children: [
+        Header(poster: movie.imageName),
+        Info(movie: movie),
+        const SizedBox(height: 20),
+        Actors(),
+      ],
     );
   }
 }
