@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:radial_percent/radial_percent.dart';
 import 'package:themoviedb/models/Movie.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Info extends StatelessWidget {
   final Movie movie;
 
   const Info({Key? key, required this.movie}) : super(key: key);
+
+  void _openTraler() async {
+    const url = 'https://www.youtube.com/watch?v=-bfAVpuko5o';
+
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print('Error');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +80,7 @@ class Info extends StatelessWidget {
         ),
         Expanded(
           child: TextButton(
-            onPressed: () {},
+            onPressed: _openTraler,
             style: ButtonStyle(
               overlayColor: MaterialStateColor.resolveWith(
                 (states) => Colors.white.withOpacity(0.1),
