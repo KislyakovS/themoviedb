@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themoviedb/components/outer_ring.dart';
+import 'package:themoviedb/components/default_radial_percent.dart';
 import 'package:themoviedb/models/Movie.dart';
 
 class MovieCard extends StatelessWidget {
@@ -28,7 +28,7 @@ class MovieCard extends StatelessWidget {
                 child: SizedBox(
                   width: 44,
                   height: 44,
-                  child: OuterRing(
+                  child: DefaultRadialPercent(
                     percent: 0.75,
                     fontSize: 9,
                   ),

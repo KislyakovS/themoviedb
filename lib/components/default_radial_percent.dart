@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:radial_percent/radial_percent.dart';
 
-class OuterRing extends StatelessWidget {
+class DefaultRadialPercent extends StatelessWidget {
   final double percent;
   final double? fontSize;
 
-  const OuterRing({Key? key, required this.percent, this.fontSize = 12})
+  const DefaultRadialPercent(
+      {Key? key, required this.percent, this.fontSize = 12})
       : super(key: key);
 
   @override
