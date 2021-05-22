@@ -12,29 +12,11 @@ class Body extends StatelessWidget {
       children: [
         Header(),
         const SizedBox(height: 30),
-        PopularList(
-          title: const Text(
-            'What\'s Popular',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          movies: demoMovies,
-        ),
-        PopularList(
-          title: const Text(
-            'Free To Watch',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          movies: demoMovies,
-        ),
+        MoviesList(title: 'What\'s Popular', movies: demoMovies),
+        MoviesList(title: 'Free To Watch', movies: demoMovies),
         TrailersList(),
-        const SizedBox(height: 20),
-        PopularList(
-          title: const Text(
-            'Trending',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          movies: demoMovies,
-        ),
+        const SizedBox(height: 30),
+        MoviesList(title: 'Trending', movies: demoMovies),
       ],
     );
   }
