@@ -5,7 +5,7 @@ class BoxBackground extends StatelessWidget {
   final AlignmentGeometry alignment;
   final String imageName;
   final Gradient? gradient;
-  final List<Widget> children;
+  final Widget child;
 
   const BoxBackground({
     Key? key,
@@ -13,7 +13,7 @@ class BoxBackground extends StatelessWidget {
     this.gradient,
     this.fit = StackFit.loose,
     this.alignment = AlignmentDirectional.topStart,
-    required this.children,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class BoxBackground extends StatelessWidget {
               ),
             ),
           ),
-        ...children
+        child
       ],
     );
   }
