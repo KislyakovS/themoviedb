@@ -20,7 +20,9 @@ class Actors extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               width: 160,
-              margin: index != demoActors.length - 1 ? const EdgeInsets.only(left: 16) : const EdgeInsets.only(left: 16, right: 16),
+              margin: index != demoActors.length - 1
+                  ? const EdgeInsets.only(left: 16)
+                  : const EdgeInsets.only(left: 16, right: 16),
               child: ActorCard(
                 actor: demoActors[index],
                 description: Text(
