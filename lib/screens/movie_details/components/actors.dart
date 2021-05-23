@@ -22,7 +22,7 @@ class Actors extends StatelessWidget {
               width: 160,
               margin: index != demoActors.length - 1
                   ? const EdgeInsets.only(left: 16)
-                  : const EdgeInsets.only(left: 16, right: 16),
+                  : const EdgeInsets.symmetric(horizontal: 16),
               child: ActorCard(
                 actor: demoActors[index],
                 description: Text(
