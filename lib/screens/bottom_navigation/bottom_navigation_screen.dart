@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/screens/home/home_screen.dart';
 import 'package:themoviedb/screens/movies/movies_screen.dart';
+import 'package:themoviedb/screens/people/people_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   static String routeName = '/bottom_navigation';
@@ -10,7 +11,14 @@ class BottomNavigationScreen extends StatefulWidget {
 }
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
-  final List<Widget> _screens = [HomeScreen(), MoviesScreen(title: 'Movies',), MoviesScreen(title: 'TV-Show')];
+  final List<Widget> _screens = [
+    HomeScreen(),
+    const MoviesScreen(
+      title: 'Movies',
+    ),
+    const MoviesScreen(title: 'TV-Show'),
+    PeopleScreen()
+  ];
 
   int _selectedIndex = 0;
 
