@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/components/box_background.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -10,36 +11,22 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return BoxBackground(
       alignment: AlignmentDirectional.centerStart,
-      children: [
-        Image.asset(
-          'assets/images/Invincible-bg.jpg',
-        ),
-        const Positioned(
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.black, Colors.transparent],
-              ),
-            ),
+      imageName: 'assets/images/Invincible-bg.jpg', 
+      gradient: const LinearGradient(
+        colors: [Colors.black, Colors.transparent],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.asset(
+            poster,
+            width: 100,
           ),
         ),
-        Positioned(
-          left: 20,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              poster,
-              width: 100,
-            ),
-          ),
-        )
-      ],
+      ),
     );
   }
 }
