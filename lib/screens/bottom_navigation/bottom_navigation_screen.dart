@@ -10,7 +10,7 @@ class BottomNavigationScreen extends StatefulWidget {
 }
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
-  final List<Widget> _screens = [HomeScreen(), MoviesScreen()];
+  final List<Widget> _screens = [HomeScreen(), MoviesScreen(title: 'Movies',), MoviesScreen(title: 'TV-Show')];
 
   int _selectedIndex = 0;
 
