@@ -1,74 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:themoviedb/components/wrapper_card.dart';
+import 'package:themoviedb/components/actor_card.dart';
+import 'package:themoviedb/components/title_section.dart';
+import 'package:themoviedb/models/Actor.dart';
 
 class Actors extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: const Text(
-            'Actors',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
-        ),
-        const SizedBox(height: 20),
-        Container(
-          height: 260,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            shrinkWrap: true,
-            children: [
-              ActorCard(),
-              ActorCard(),
-              ActorCard(),
-              ActorCard(),
-              const SizedBox(width: 20)
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class ActorCard extends StatelessWidget {
-  const ActorCard({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 160,
-      padding: const EdgeInsets.only(left: 16),
-      child: WrapperCard(
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/actor.jpg',
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Steven Yeun',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    'Mark Grayson / Invincible (voice)',
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                  )
-                ],
+    return TitleSection(
+      title: const Text(
+        'Actors',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+      ),
+      child: SizedBox(
+        height: 260,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          itemCount: demoActors.length,
+          itemBuilder: (context, index) {
+            return Container(
+              width: 160,
+              margin: index != demoActors.length - 1 ? const EdgeInsets.only(left: 16) : const EdgeInsets.only(left: 16, right: 16),
+              child: ActorCard(
+                actor: demoActors[index],
+                description: Text(
+                  'Mark Grayson / Invincible (voice)',
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                press: () {},
               ),
-            )
-          ],
+            );
+          },
         ),
       ),
     );
