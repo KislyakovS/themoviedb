@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:radial_percent/radial_percent.dart';
 import 'package:themoviedb/components/default_radial_percent.dart';
 import 'package:themoviedb/models/Movie.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,8 +13,6 @@ class Info extends StatelessWidget {
 
     if (await canLaunch(url)) {
       await launch(url);
-    } else {
-      print('Error');
     }
   }
 
@@ -48,7 +45,7 @@ class Info extends StatelessWidget {
               Container(
                 width: 55,
                 height: 55,
-                child: DefaultRadialPercent(percent: 0.72),
+                child: const DefaultRadialPercent(percent: 0.72),
               ),
               const SizedBox(width: 10),
               const Text(

@@ -27,7 +27,7 @@ class MovieCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                   child: Image.asset(movie.imageName),
                 ),
-                Positioned(
+                const Positioned(
                   left: 20,
                   bottom: -17,
                   child: SizedBox(

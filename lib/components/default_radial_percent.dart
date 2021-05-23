@@ -13,9 +13,9 @@ class DefaultRadialPercent extends StatelessWidget {
   Widget build(BuildContext context) {
     return RadialPercent(
       percent: percent,
-      fillColor: Color.fromARGB(255, 10, 23, 25),
-      lineColor: Color.fromARGB(255, 37, 203, 103),
-      freeColor: Color.fromARGB(255, 25, 54, 31),
+      fillColor: const Color.fromARGB(255, 10, 23, 25),
+      lineColor: const Color.fromARGB(255, 37, 203, 103),
+      freeColor: const Color.fromARGB(255, 25, 54, 31),
       lineWidth: 3,
       child: Text(
         '75%',

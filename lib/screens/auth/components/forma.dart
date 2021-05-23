@@ -9,7 +9,7 @@ class Forma extends StatefulWidget {
 class _FormaState extends State<Forma> {
   final _loginController = TextEditingController();
   final _passwordController = TextEditingController();
-  String? messageError = null;
+  String? messageError;
 
   void _auth() {
     final login = _loginController.text;
@@ -25,10 +25,9 @@ class _FormaState extends State<Forma> {
     }
   }
 
-  void _resetPassword() {
-    print('reset password');
-  }
+  void _resetPassword() {}
 
+  @override
   Widget build(BuildContext context) {
     const primeColor = Color(0xFF2bb4e4);
     const textStyle = TextStyle(fontSize: 16, color: Color(0xFF212529));
@@ -78,10 +77,6 @@ class _FormaState extends State<Forma> {
           children: [
             ElevatedButton(
               onPressed: _auth,
-              child: const Text(
-                'Login',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
               style: ButtonStyle(
                 padding: MaterialStateProperty.all(
                   const EdgeInsets.symmetric(horizontal: 19, vertical: 6),
@@ -92,6 +87,10 @@ class _FormaState extends State<Forma> {
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
+              ),
+              child: const Text(
+                'Login',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(width: 25),

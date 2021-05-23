@@ -19,7 +19,7 @@ class VideoCard extends StatelessWidget {
                   height: 169,
                 ),
               ),
-              Icon(
+              const Icon(
                 Icons.play_arrow,
                 size: 64,
                 color: Colors.white,
@@ -29,7 +29,7 @@ class VideoCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             'Brooklyn Nine-Nine',
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 19,
               fontWeight: FontWeight.w600,
@@ -39,7 +39,7 @@ class VideoCard extends StatelessWidget {
           Text(
             'The Nine-Nine\'s Going Out in a Blaze of Glory - Brooklyn Nine-Nine',
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
             ),
           )

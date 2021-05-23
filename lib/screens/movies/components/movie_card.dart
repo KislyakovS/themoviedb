@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/models/Movie.dart';
 
-import 'body.dart';
-
 class MovieCard extends StatelessWidget {
   const MovieCard({
     Key? key,
@@ -46,7 +44,7 @@ class MovieCard extends StatelessWidget {
                         movie.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
