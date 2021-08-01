@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/routes.dart';
-import 'package:themoviedb/screens/bottom_navigation/bottom_navigation_screen.dart';
+
+import 'screens/auth/auth_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      initialRoute: BottomNavigationScreen.routeName,
+      initialRoute: AuthScreen.routeName,
       routes: routes,
     );
   }
