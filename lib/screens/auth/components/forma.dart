@@ -94,7 +94,18 @@ class _LoginBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = AuthProvider.watch(context)?.model;
     final onPressed =
-        model?.canAuth == null ? () => model?.auth(context) : null;
+        model?.canAuth != null ? () => model?.auth(context) : null;
+
+    final child = model?.isAuthProgress == true
+        ? const SizedBox(
+            width: 15,
+            height: 15,
+            child: CircularProgressIndicator(),
+          )
+        : const Text(
+            'Login',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          );
 
     return ElevatedButton(
       onPressed: onPressed,
@@ -109,10 +120,7 @@ class _LoginBtn extends StatelessWidget {
           ),
         ),
       ),
-      child: const Text(
-        'Login',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      ),
+      child: child,
     );
   }
 }
